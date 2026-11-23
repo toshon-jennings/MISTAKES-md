@@ -94,6 +94,25 @@ See the template for the full annotated version.
 
 ---
 
+## Validation & Agent Skill
+
+### Zero-Dependency Validator
+
+Verify that your `MISTAKES.md` follows the format (valid dates, all four fields, consistent style, newest-first order) locally or in CI:
+
+```bash
+python3 scripts/validate_mistakes.py MISTAKES.md
+
+# Machine-readable JSON output for hooks/CI
+python3 scripts/validate_mistakes.py MISTAKES.md --json
+```
+
+### Portable Agent Skill
+
+If your agent supports `SKILL.md` (Antigravity, Claude Code, Codex CLI, etc.), copy `skills/mistakes-md/SKILL.md` into your skills directory so agents automatically read `MISTAKES.md` before risky actions and validate new entries.
+
+---
+
 ## License
 
 CC0 -- use it, fork it, ship it with your agent rules. No attribution required.
