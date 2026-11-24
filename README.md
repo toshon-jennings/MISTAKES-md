@@ -98,7 +98,7 @@ See the template for the full annotated version.
 
 ### Zero-Dependency Validator
 
-Verify that your `MISTAKES.md` follows the format (valid dates, all four fields, consistent style, newest-first order) locally or in CI:
+Verify that your `MISTAKES.md` follows the format locally or in CI. The validator checks both entry styles for valid `YYYY-MM-DD` calendar dates, all four fields, one consistent style, and newest-first order. Date-like entries with malformed dates are reported as errors instead of being skipped:
 
 ```bash
 python3 scripts/validate_mistakes.py MISTAKES.md
